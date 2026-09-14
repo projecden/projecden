@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>@의 유산 · Legacy of @</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header class="top">
+    <div class="brand"><span class="at">@</span><div><b>@의 유산</b><small>LEGACY OF @</small></div></div>
+    <div class="floor"><strong>B1</strong><span></span><em>잊힌 회랑</em></div>
+    <button class="pause" id="pauseBtn">ESC · 일시정지</button>
+  </header>
+
+  <main>
+    <section class="stage">
+      <div class="screen active" id="titleScreen">
+        <div class="title-card">
+          <div class="eyebrow">LEGACY OF @</div>
+          <h1>@의 유산</h1>
+          <div class="creator">CREATED BY KIZOOJR</div>
+          <p>잊힌 회랑 아래, 당신이 남긴 것은 다음 탐험의 힘이 됩니다.<br>검을 쥐고 지하 5층의 백의 왕을 쓰러뜨리세요.</p>
+          <button class="gold-btn" id="enterBtn">던전에 들어가기</button>
+          <button class="dark-btn" id="relicBtn">유물 선택</button>
+          <small class="hint">WASD 이동 · 마우스 조준 · 좌클릭 공격 · E 상호작용<br>메뉴와 선택 화면에서는 시간이 멈춥니다. PC 플레이를 권장합니다.</small>
+        </div>
+      </div>
+
+      <div class="screen" id="relicScreen">
+        <div class="relic-page">
+          <div class="eyebrow">RELICS</div><h2>유물 보관함</h2>
+          <p class="sub">최대 3종 장비 · 같은 종류는 하나만 · 선택 <span id="relicCount">0</span>/3</p>
+          <div class="tabs" id="tabs"></div>
+          <div class="relic-body">
+            <aside id="categories"></aside>
+            <div class="relic-list" id="relicList"><div class="empty">0개 / 보유 0개<br><br>2층 이상에서 보스를 마치면 유물을 얻습니다.</div></div>
+          </div>
+          <button class="dark-btn back" id="backBtn">준비 화면으로</button>
+        </div>
+      </div>
+
+      <div class="screen" id="gameScreen">
+        <div class="loot-box">
+          <div class="loot-head">소모품 <span>클릭 / 1-4</span></div>
+          <div class="items"><button>1<br><b>음식</b></button><button>2<br><b>물약</b></button><button disabled>3<br><b>비칸</b></button><button disabled>4<br><b>비칸</b></button></div>
+        </div>
+        <div class="map-mini"><div>탐험 지도 <span>18%</span></div><div class="mini-grid"></div></div>
+        <div class="status-bars">
+          <label>생명력 <span id="hpText">1000 / 1000</span></label><div class="bar hp"><i id="hpBar"></i></div>
+          <label>영양 <span>995 · 양호</span></label><div class="bar food"><i></i></div>
+        </div>
+        <div id="map" class="map">
+          <div class="room r1"></div><div class="room r2"></div><div class="room r3"></div><div class="room r4"></div>
+          <div id="chest">▣</div><div id="player">@</div><div class="dot"></div>
+          <div class="door-label">E · 상자</div>
+        </div>
+        <div class="combat-hints"><span>SPACE 회피 준비</span><span>Q / 우클릭 검기 준비</span></div>
+      </div>
+    </section>
+
+    <aside class="side">
+      <div class="explore">탐험가 <span id="timer">00:00</span></div>
+      <div class="stats">
+        <div>공격력<b>100</b></div><div>골드<b>0</b></div>
+        <div>치명타<b>20%</b></div><div>모든 피해 증가<b>0%</b></div>
+        <div>모든 피해 감소<b>0%</b></div><div>공격 속도 증가<b>0%</b></div>
+      </div>
+      <hr><h3>장비 <span>1 / 6</span></h3>
+      <div class="equipment"><div class="equipped">♕<small>번개</small></div><div>＋</div><div>＋</div><div>＋</div><div>＋</div><div>＋</div></div>
+      <h3>시너지</h3>
+      <div class="synergy"><div>ϟ <b>번개</b><span>1 / 2</span></div><div>$ <b>절약</b><span>1 / 2</span></div><div>† <b>소검</b><span>1 / 3</span></div></div>
+      <hr><div class="record">획득 증강 <span>0개</span></div><hr><div class="record">탐험 기록</div>
+    </aside>
+  </main>
+
+  <footer>W A S D　이동　　마우스 조준 · 좌클릭 공격 / 길게 눌러 차지　　우클릭 / Q 검기　　SPACE 회피　　E 상호작용　　<button id="helpBtn">도움말</button>　 구현 현황</footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
